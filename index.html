@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Главная</title>
+</head>
+<body onload="playVideo()">
+
+    <!-- Видео с минимальным размером и звуком -->
+    <video id="introVideo" width="20%" height="auto" playsinline>
+        <source src="BU.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>    
+
+    <h1>БУ, Испугался? Не бойся, я друг!!</h1>
+    <p>Это главная страница Копылова Дениса Андреевича.</p>
+
+    <nav>
+        <a href="about.html">О нас</a>
+    </nav>
+
+    <script>
+        function playVideo() {
+            const video = document.getElementById('introVideo');
+            video.muted = false; // Убираем mute, чтобы был звук
+            video.play().catch(error => {
+                console.log('Автовоспроизведение видео со звуком не поддерживается в этом браузере. Пользователь должен разрешить воспроизведение.');
+            });
+        }
+    </script>
+</body>
+</html>
